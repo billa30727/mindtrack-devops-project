@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Logging into DockerHub
-      - docker login -u 30727 -p CxhbU5FICjHJXSEreiAYqxkfTr0
+      - docker login -u 30727 -p dckr_pat_89ow8T3y8bhF9R2cDyvmQydxCH8
 
   build:
     commands:
