@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+
+  pre_build:
+    commands:
+      - echo Logging into DockerHub
+      - docker login -u 30727 -p CxhbU5FICjHJXSEreiAYqxkfTr0
+
+  build:
+    commands:
+      - echo Build started
+      - docker build -t brain-task-app .
+      - docker tag brain-task-app 30727/brain-task-app:latest
+
+  post_build:
+    commands:
+      - echo Pushing image
+      - docker push 30727/brain-task-app:latest
+
+artifacts:
+  files:
+    - '**/*'
